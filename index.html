@@ -58,6 +58,89 @@
         </script>
     </head>
     <body>
+        <!-- Schedule Popup -->
+        <div id="schedulePopup" class="schedule-popup" onclick="closeSchedulePopup(event)">
+          <div class="schedule-popup-content">
+            <img src="./schedule.png" alt="Schedule" class="schedule-popup-image">
+            <button class="schedule-close-button" onclick="closeSchedulePopup()">close</button>
+          </div>
+        </div>
+        
+        <style>
+          .schedule-popup {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.75);
+        
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 16px;
+          }
+        
+          .schedule-popup-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+        
+          .schedule-popup-image {
+            width: 70%;
+            max-width: 900px;
+            max-height: 80vh;
+            object-fit: contain;
+        
+            border-radius: 18px;
+            border: 4px solid #fff;
+            box-sizing: border-box;
+          }
+        
+          .schedule-close-button {
+            margin-top: 24px;
+            padding: 14px 48px;
+        
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        
+            color: #111;
+            background: #fff;
+            border: none;
+            border-radius: 999px;
+            cursor: pointer;
+          }
+        
+          .schedule-close-button:hover {
+            opacity: 0.85;
+          }
+        
+          @media (max-width: 768px) {
+            .schedule-popup-image {
+              width: 92%;
+              max-height: 75vh;
+            }
+        
+            .schedule-close-button {
+              width: 70%;
+              font-size: 18px;
+            }
+          }
+        </style>
+        
+        <script>
+          function closeSchedulePopup(event) {
+            const popup = document.getElementById('schedulePopup');
+        
+            // 画像やボタン以外、つまり背景部分を押したときだけ閉じる
+            if (!event || event.target === popup || event.target.classList.contains('schedule-close-button')) {
+              popup.style.display = 'none';
+            }
+          }
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        </script>
         <header id="header" class="desktop"></header>
         <header id="header-mobile" class="mobile"></header>
         <div class="st-wrapper">
